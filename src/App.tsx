@@ -1,9 +1,8 @@
-import { Button } from "@/components/ui/button"
+import Header from "./components/Header"
 function App() {
-
   return (
-    <div className='flex h-dvh w-full justify-center items-center'>
-      <Button className='mx-auto'>Click Me</Button>
+    <div className='flex flex-col h-dvh bg-[rgb(17_17_17)]'>
+      <Header />
     </div>
   )
 }
