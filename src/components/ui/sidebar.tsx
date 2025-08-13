@@ -1,5 +1,3 @@
-"use client"
-
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { PanelLeft } from "lucide-react"
@@ -185,12 +183,17 @@ const Sidebar = React.forwardRef<
       >
         <div
           data-sidebar="sidebar"
-          className="flex h-full w-full flex-col bg-sidebar group-data-[variant=floating]:rounded-lg group-data-[variant=floating]:border group-data-[variant=floating]:border-sidebar-border group-data-[variant=floating]:shadow"
+          className="flex h-full w-full flex-col !bg-[rgb(255_258_248/10%)]
+          group-data-[variant=floating]:rounded-lg
+        group-data-[variant=floating]:border
+        group-data-[variant=floating]:border-sidebar-border
+        group-data-[variant=floating]:shadow"
         >
           {children}
         </div>
+
       </div>
-    </div>
+    </div >
   )
 })
 Sidebar.displayName = "Sidebar"

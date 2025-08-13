@@ -1,5 +1,3 @@
-"use client"
-
 import type * as React from "react"
 import { Home, Users, Settings, FileText, BarChart3, Mail } from "lucide-react"
 
@@ -55,13 +53,13 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     return (
-        <Sidebar variant="inset" {...props}>
+        <Sidebar variant="inset" {...props} className="[&_[data-sidebar='sidebar']]:bg-[rgb(255_258_248/4%)]">
             <SidebarHeader>
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size="lg" asChild>
                             <a href="#">
-                                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+                                <div className="flex aspect-square size-8 items-center justify-center rounded-lg ">
                                     <Home className="size-4" />
                                 </div>
                                 <div className="grid flex-1 text-left text-sm leading-tight">
