@@ -1,5 +1,5 @@
 import type * as React from "react"
-import { BadgeQuestionMark, UsersRound, Users, Flower, Home, Inbox, LayoutDashboard, CircleEllipsis, ChevronRight, Ellipsis, Search, Plus } from "lucide-react"
+import { BadgeQuestionMark, UsersRound, ChevronRight, Ellipsis, Search, Plus } from "lucide-react"
 import {
     Sidebar,
     SidebarContent,
@@ -14,55 +14,7 @@ import {
     SidebarTrigger,
     useSidebar
 } from "@/components/ui/sidebar"
-
-const data = {
-    navMain: [
-        {
-            title: "Dashboard",
-            url: "",
-            icon: Home,
-            isActive: false,
-        },
-        {
-            title: "Inbox",
-            url: "",
-            icon: Inbox,
-        },
-        {
-            title: "Dashboard",
-            url: "",
-            icon: LayoutDashboard,
-        },
-        {
-            title: "More",
-            url: "",
-            icon: CircleEllipsis,
-        },
-    ],
-}
-const Moredata = {
-    navMain: [
-        {
-            title: "Everthing",
-            url: "",
-            icon: Flower,
-            isActive: false,
-        },
-        {
-            title: "Team Space",
-            url: "",
-            icon: Users,
-            isActive: false,
-        },
-        {
-            title: "Create Space",
-            url: "",
-            icon: Plus,
-            isActive: false,
-        }
-    ],
-}
-
+import { SidebarMoredata, Sidebardata } from "@/lib/utils"
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     const { open } = useSidebar()
     return (
@@ -90,7 +42,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <SidebarGroup className="border-b border-[rgb(53,52,52)]">
                     <SidebarGroupContent>
                         <SidebarMenu>
-                            {data.navMain.map((item) => (
+                            {Sidebardata.navMain.map((item) => (
                                 <SidebarMenuItem key={item.title}>
                                     <SidebarMenuButton tooltip={item.title} isActive={item.isActive}>
                                         <item.icon />
@@ -122,7 +74,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                     }
                     <SidebarGroupContent>
                         <SidebarMenu>
-                            {Moredata.navMain.map((item) => (
+                            {SidebarMoredata.navMain.map((item) => (
                                 <SidebarMenuItem key={item.title}>
                                     <SidebarMenuButton tooltip={item.title} isActive={item.isActive} >
                                         <item.icon />

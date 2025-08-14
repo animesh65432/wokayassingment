@@ -200,7 +200,7 @@ Sidebar.displayName = "Sidebar"
 
 const SidebarTrigger = React.forwardRef<React.ElementRef<typeof Button>, React.ComponentProps<typeof Button>>(
   ({ className, onClick, ...props }, ref) => {
-    const { toggleSidebar } = useSidebar()
+    const { toggleSidebar, open } = useSidebar()
 
     return (
       <Button
@@ -214,7 +214,7 @@ const SidebarTrigger = React.forwardRef<React.ElementRef<typeof Button>, React.C
         }}
         {...props}
       >
-        <PanelLeft />
+        <PanelLeft className={`${open ? "text-white" : ""}`} />
         <span className="sr-only">Toggle Sidebar</span>
       </Button>
     )
