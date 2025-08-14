@@ -206,9 +206,8 @@ const SidebarTrigger = React.forwardRef<React.ElementRef<typeof Button>, React.C
       <Button
         ref={ref}
         data-sidebar="trigger"
-        variant="ghost"
         size="icon"
-        className={cn("h-7 w-7", className)}
+        className={cn("h-7 w-7 hover:bg-transparent", className)}
         onClick={(event) => {
           onClick?.(event)
           toggleSidebar()
@@ -397,7 +396,7 @@ const getSidebarMenuButtonClasses = (
   size: "default" | "sm" | "lg" = "default",
 ) => {
   const baseClasses =
-    "peer/menu-button flex w-full items-center gap-2 overflow-hidden rounded-md p-2 text-left text-sm outline-none ring-sidebar-ring transition-[width,height,padding] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0"
+    "peer/menu-button flex w-full items-center  gap-2 overflow-hidden  text-left text-sm outline-none ring-sidebar-ring transition-[width,height,padding] hover:bg-sidebar-accent hover:text-sidebar-accent-foreground focus-visible:ring-2 active:bg-sidebar-accent active:text-sidebar-accent-foreground disabled:pointer-events-none disabled:opacity-50 group-has-[[data-sidebar=menu-action]]/menu-item:pr-8 aria-disabled:pointer-events-none aria-disabled:opacity-50 data-[active=true]:bg-sidebar-accent data-[active=true]:font-medium data-[active=true]:text-sidebar-accent-foreground data-[state=open]:hover:bg-sidebar-accent data-[state=open]:hover:text-sidebar-accent-foreground group-data-[collapsible=icon]:!size-8 group-data-[collapsible=icon]:!p-2 [&>span:last-child]:truncate [&>svg]:size-4 [&>svg]:shrink-0"
 
   const variantClasses = {
     default: "hover:bg-sidebar-accent hover:text-sidebar-accent-foreground",
@@ -421,7 +420,7 @@ const SidebarMenuButton = React.forwardRef<
     isActive?: boolean
     tooltip?: string | React.ComponentProps<typeof TooltipContent>
     variant?: "default" | "outline"
-    size?: "default" | "sm" | "lg"
+    size?: "default" | "sm" | "lg",
   }
 >(({ asChild = false, isActive = false, variant = "default", size = "default", tooltip, className, ...props }, ref) => {
   const Comp = asChild ? Slot : "button"
@@ -435,6 +434,7 @@ const SidebarMenuButton = React.forwardRef<
       data-active={isActive}
       className={cn(getSidebarMenuButtonClasses(variant, size), className)}
       {...props}
+
     />
   )
 

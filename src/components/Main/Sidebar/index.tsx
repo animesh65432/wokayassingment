@@ -1,6 +1,5 @@
 import type * as React from "react"
 import { Home, Users, Settings, FileText, BarChart3, Mail } from "lucide-react"
-
 import {
     Sidebar,
     SidebarContent,
@@ -13,6 +12,8 @@ import {
     SidebarMenuButton,
     SidebarMenuItem,
     SidebarRail,
+    SidebarTrigger,
+    useSidebar
 } from "@/components/ui/sidebar"
 
 const data = {
@@ -52,21 +53,24 @@ const data = {
 }
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+    const { open } = useSidebar()
     return (
         <Sidebar variant="inset" {...props} className="bg-[rgb(255_258_248/4%)] p-0">
             <SidebarHeader>
                 <SidebarMenu>
                     <SidebarMenuItem>
                         <SidebarMenuButton size="lg" asChild>
-                            <a href="#">
-                                <div className="flex aspect-square size-8 items-center justify-center rounded-lg ">
-                                    <Home className="size-4" />
+                            <div className="w-[100%]">
+                                <div className={`flex  ${open ? "ml-0" : "mx-auto"} bg-green-800 aspect-square size-7 items-center justify-center rounded-lg `}>
+                                    A
                                 </div>
-                                <div className="grid flex-1 text-left text-sm leading-tight">
-                                    <span className="truncate font-semibold">Dashboard</span>
-                                    <span className="truncate text-xs">Your App</span>
+                                <div className="grid w-[56%] text-left text-[1.2rem] leading-tight">
+                                    <span className="truncate font-semibold">Animesh Dutta</span>
                                 </div>
-                            </a>
+                                <div>
+                                    <SidebarTrigger />
+                                </div>
+                            </div>
                         </SidebarMenuButton>
                     </SidebarMenuItem>
                 </SidebarMenu>
