@@ -169,7 +169,7 @@ const Sidebar = React.forwardRef<
       />
       <div
         className={cn(
-          "duration-200 fixed inset-y-0 z-10 top-10 h-svh w-(--sidebar-width) transition-[left,right,width] ease-linear flex",
+          "duration-200 fixed inset-y-0 z-10 top-11 h-svh w-(--sidebar-width) transition-[left,right,width] ease-linear flex",
           side === "left"
             ? "left-0 group-data-[collapsible=offcanvas]:left-[calc(var(--sidebar-width)*-1)]"
             : "right-0 group-data-[collapsible=offcanvas]:right-[calc(var(--sidebar-width)*-1)]",
@@ -183,7 +183,7 @@ const Sidebar = React.forwardRef<
       >
         <div
           data-sidebar="sidebar"
-          className="flex h-full w-full flex-col !bg-[rgb(255_258_248/10%)]
+          className="flex h-full w-full flex-col
           group-data-[variant=floating]:rounded-lg
         group-data-[variant=floating]:border
         group-data-[variant=floating]:border-sidebar-border
@@ -257,7 +257,6 @@ const SidebarInset = React.forwardRef<HTMLDivElement, React.ComponentProps<"div"
       ref={ref}
       className={cn(
         "relative flex min-h-svh flex-1 flex-col bg-background",
-        "peer-data-[variant=inset]:min-h-[calc(100svh-theme(spacing.4))] md:peer-data-[variant=inset]:m-2 md:peer-data-[state=collapsed]:peer-data-[variant=inset]:ml-2 md:peer-data-[variant=inset]:ml-0 md:peer-data-[variant=inset]:rounded-xl md:peer-data-[variant=inset]:shadow",
         className,
       )}
       {...props}
