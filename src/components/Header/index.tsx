@@ -2,7 +2,7 @@ import { Calendar, Search, Settings, CirclePlus, Video, LayoutDashboard, Logs } 
 
 export default function Header() {
     return (
-        <div className=" p-2 px-5 flex justify-between items-center bg-[rgb(255_258_248/4%)]">
+        <div className=" p-2 px-5 flex justify-between items-center bg-[rgb(255_258_248/5%)]">
             <div className="relative h-4 w-4">
                 <img className="absolute h-full w-full" src="https://app-cdn.clickup.com/media/clickup-symbol_color-VTPFUWKJ.svg" />
             </div>
