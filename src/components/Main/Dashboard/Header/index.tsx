@@ -6,7 +6,7 @@ type Props = {
 }
 export default function Header({ IsSidebarOpen }: Props) {
     return (
-        <div className="flex flex-col w-full ">
+        <div className="flex flex-col w-full mb-0 pb-0 ">
             <div className="flex items-center justify-between px-2 h-14 w-full border border-[rgb(53,52,52)]">
                 <div className="flex gap-4 items-center shrink">
                     {!IsSidebarOpen && <SidebarTrigger className="text-white" />}
