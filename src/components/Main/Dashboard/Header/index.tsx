@@ -91,6 +91,7 @@ export default function Header({ IsSidebarOpen }: Props) {
                         <Settings className="h-4 w-4" />
                         <p className="text-sm  hidden md:block text-[rgb(255_258_248/50%)]">Customize</p>
                     </div>
+                    <div className="bg-[#4a3fea] text-white text-sm  hidden lg:block rounded-md px-4 p-1">Add task</div>
                 </div>
             </div>
         </div>
