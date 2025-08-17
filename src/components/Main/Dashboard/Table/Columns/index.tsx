@@ -15,7 +15,6 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select"
-import { dummyTodos } from "@/lib/utils"
 import { useContextTodo } from "@/context"
 
 export const columns: ColumnDef<Todo>[] = [
