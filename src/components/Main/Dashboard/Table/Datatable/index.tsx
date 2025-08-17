@@ -3,7 +3,9 @@ import {
     flexRender,
     getCoreRowModel,
     useReactTable,
+    getFilteredRowModel
 } from "@tanstack/react-table"
+import type { ColumnFiltersState } from "@tanstack/react-table"
 
 import {
     Table,
@@ -13,6 +15,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
+import React from "react"
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
@@ -23,10 +26,20 @@ export function DataTable<TData, TValue>({
     columns,
     data,
 }: DataTableProps<TData, TValue>) {
+    const [rowSelection, setRowSelection] = React.useState({})
+    const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([]) // ✅ typed
+
     const table = useReactTable({
         data,
         columns,
         getCoreRowModel: getCoreRowModel(),
+        getFilteredRowModel: getFilteredRowModel(),
+        onRowSelectionChange: setRowSelection,
+        onColumnFiltersChange: setColumnFilters,
+        state: {
+            rowSelection,
+            columnFilters,
+        },
     })
 
     return (
@@ -56,6 +69,7 @@ export function DataTable<TData, TValue>({
                             <TableRow
                                 key={row.id}
                                 data-state={row.getIsSelected() && "selected"}
+
                             >
                                 {row.getVisibleCells().map((cell) => (
                                     <TableCell key={cell.id}>
