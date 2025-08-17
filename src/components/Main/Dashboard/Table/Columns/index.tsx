@@ -93,9 +93,9 @@ export const columns: ColumnDef<Todo>[] = [
         id: "actions",
         cell: ({ row }) => {
             const todo = row.original
-            const { setTodos } = useContextTodo()
+            const { setTodos, todos } = useContextTodo()
             const deletetodo = (id: number) => {
-                const filtertodos = dummyTodos.filter((todo) => todo.id !== id)
+                const filtertodos = todos.filter((todo) => todo.id !== id)
                 setTodos(filtertodos)
             }
 
