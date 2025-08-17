@@ -12,3 +12,11 @@ export type Todo = {
     priority: "High" | "Medium" | "Low"
     status: "Pending" | "Completed" | "In Progress"
 }
+
+export type addtodo = {
+    id: number
+    title: string
+    dueDate: string
+    priority: string
+    status: string
+}

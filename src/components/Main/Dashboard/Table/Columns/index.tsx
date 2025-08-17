@@ -108,7 +108,6 @@ export const columns: ColumnDef<Todo>[] = [
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="end" className="bg-[rgb(25,25,25)] text-white">
                         <DropdownMenuItem onClick={() => deletetodo(todo.id)} className="hover:!bg-transparent  hover:!text-white">delete</DropdownMenuItem>
-                        <DropdownMenuItem className="hover:!bg-transparent hover:!text-white">Edit</DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             )
